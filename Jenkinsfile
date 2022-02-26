@@ -17,7 +17,7 @@ node {
 	}
 
 	stage('Deploy') {
-		sh ("docker run -d -p 3000:3000 grafana/grafana-enterprise ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sh ("$ docker run --rm -it -p 82:80 yeasy/simple-web:latest ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
 	stage('Remove old images') {
