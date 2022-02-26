@@ -17,7 +17,7 @@ node {
 	}
 
 	stage('Deploy') {
-		sh ("docker run --rm -p 82:80 yeasy/simple-web:latest ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sh ("docker run --rm -p 82:80 yeasy/simple-web ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
 	stage('Remove old images') {
